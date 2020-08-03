@@ -5,10 +5,10 @@ Unit tests for ...
 
 import unittest
 
-__author__ = '???'
+__author__ = 'madarp'
 
 
-class TestMyModule(unittest.TestCase):
+class TestList2(unittest.TestCase):
     pass
 
 
