@@ -32,7 +32,36 @@ def remove_adjacent(nums):
     return
 
 
-# E. linear_merge
+# E. zip_merge
+# Given two lists, combine the values from their corresponding
+# indices into a single list.
+# list1 = ["M", "na", "i", "Ke"]
+# list2 = ["y", "me", "s", "lly"]
+# result = ['My', 'name', 'is', 'Kelly']
+# Hint: Think of it as "zipping" two lists together.  Is there
+# a built-in function in python that will do this?
+
+
+def zip_merge(list1, list2):
+    # your code here
+    return
+
+
+# F. empty_filter
+# Given a single list containing strings, empty strings, and
+# None values:  Return a new list with the same elements, but
+# strip out (filter) the empty strings and None values away.
+# example: list1 = ["Mike", "", "Emma", None, "Kelly", "", "Brad", None]
+# result:  ["Mike", "Emma", "Kelly", "Brad"]
+# Hint: There is a Python idiom for doing this.  Can you find it?
+
+
+def empty_filter(list1):
+    # your code here
+    return
+
+
+# G. linear_merge
 # Given two lists sorted in increasing order, create and
 # return a merged list of all the elements in sorted order.
 # You may modify the passed in lists.
@@ -80,6 +109,14 @@ def main():
          ['aa', 'bb', 'cc', 'xx', 'zz'])
     test(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']),
          ['aa', 'aa', 'aa', 'bb', 'bb'])
+
+    print('\nzip_merge')
+    test(zip_merge(["M", "na", "i", "Ke"], ["y", "me", "s", "lly"]),
+         ['My', 'name', 'is', 'Kelly'])
+
+    print('\nempty_filter')
+    test(empty_filter(["Mike", "", "Emma", None, "Kelly", "", "Brad", None]),
+         ["Mike", "Emma", "Kelly", "Brad"])
 
 
 # Standard boilerplate (python idiom) to call the main() function.

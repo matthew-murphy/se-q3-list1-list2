@@ -29,27 +29,41 @@ class TestList2(unittest.TestCase):
     def test_remove_adjacent(self):
         """Check if remove_adjacent function is working"""
         remove_adjacent = self.module.remove_adjacent
-        self.assertEqual(
+        self.assertListEqual(
             remove_adjacent([1, 2, 2, 3]), [1, 2, 3])
-        self.assertEqual(
+        self.assertListEqual(
             remove_adjacent([2, 2, 3, 3, 3]), [2, 3])
-        self.assertEqual(
+        self.assertListEqual(
             remove_adjacent([]), [])
-        self.assertEqual(
+        self.assertListEqual(
             remove_adjacent([2, 2, 3, 3, 3, 4, 5, 2, 3]), [2, 3, 4, 5, 2, 3])
 
     def test_linear_merge(self):
         """Check if linear_merge function is working"""
         linear_merge = self.module.linear_merge
-        self.assertEqual(
+        self.assertListEqual(
             linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']),
             ['aa', 'bb', 'cc', 'xx', 'zz'])
-        self.assertEqual(
+        self.assertListEqual(
             linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz']),
             ['aa', 'bb', 'cc', 'xx', 'zz'])
-        self.assertEqual(
+        self.assertListEqual(
             linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']),
             ['aa', 'aa', 'aa', 'bb', 'bb'])
+
+    def test_zip_merge(self):
+        """Check if zip_merge function is working"""
+        zip_merge = self.module.zip_merge
+        result = zip_merge(["M", "na", "i", "Ke"], ["y", "me", "s", "lly"])
+        self.assertListEqual(result, ['My', 'name', 'is', 'Kelly'])
+
+    def test_empty_filter(self):
+        """Check if empty_filter function is working"""
+        empty_filter = self.module.empty_filter
+        result = empty_filter(
+            ["Mike", "", "Emma", None, "Kelly", "", "Brad", None]
+            )
+        self.assertListEqual(result, ["Mike", "Emma", "Kelly", "Brad"])
 
     def test_flake8(self):
         """Checking for PEP8/flake8 compliance"""
